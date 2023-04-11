@@ -11,3 +11,32 @@ Syntax highlighting
 ```js
 curl -fsSL "https://nn.ci/alist.sh" | bash -s install
 };
+当看到提示关于YOUR_IP:5244消息之后就成功了，注意这里也会输出初始的密码，记得记录下来。
+### 宝塔操作
+点击宝塔左侧的网站，新建一个网站相信你已经很熟悉这个操作了，类型选择静态/PHP就可以了。填入你的域名，新建网站完成。
+
+建议先申请一个ssl证书开启https，因为此程序的部分功能需要https支持。
+
+点击设置-配置文件。将默认文件的以下内容删除：
+
+
+```js
+#禁止访问的文件或目录
+location ~ ^/(\.user.ini|\.htaccess|\.git|\.svn|\.project|LICENSE|README.md)
+{
+    return 404;
+}
+location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$
+{
+    expires      30d;
+    error_log /dev/null;
+    access_log /dev/null;
+}
+
+location ~ .*\.(js|css)?$
+{
+    expires      12h;
+    error_log /dev/null;
+    access_log /dev/null; 
+}
+};
