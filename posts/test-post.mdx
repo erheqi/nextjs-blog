@@ -18,25 +18,3 @@ curl -fsSL "https://nn.ci/alist.sh" | bash -s install
 建议先申请一个ssl证书开启https，因为此程序的部分功能需要https支持。
 
 点击设置-配置文件。将默认文件的以下内容删除：
-
-
-```js
-#禁止访问的文件或目录
-location ~ ^/(\.user.ini|\.htaccess|\.git|\.svn|\.project|LICENSE|README.md)
-{
-    return 404;
-}
-location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$
-{
-    expires      30d;
-    error_log /dev/null;
-    access_log /dev/null;
-}
-
-location ~ .*\.(js|css)?$
-{
-    expires      12h;
-    error_log /dev/null;
-    access_log /dev/null; 
-}
-};
