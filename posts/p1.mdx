@@ -1,8 +1,22 @@
 ---
-title: 测试
-description: " 这是一个视频 ."
+title: hexo butterfly主题更换
+description: " 以下是步骤 ."
 date: Jun 2 2021
 ---
 
-<video id="video1" width="100%" height="100%" controlsList="nodownload" poster="https://i.328888.xyz/2023/04/15/i79zbN.jpeg" preload="none" controls="controls"><source src="https://ww.erli005.repl.co/d/aliyun/%E5%B0%8F%E7%8C%AA%E4%BD%A9%E5%A5%87/%E5%B0%8F%E7%8C%AA%E4%BD%A9%E5%A5%87%E7%AC%AC1%E5%AD%A3/%E5%B0%8F%E7%8C%AA%E4%BD%A9%E5%A5%87%E7%AC%AC%E4%B8%80%E5%AD%A3.Peppa.Pig.Season.1.E01.4K.WEB-DL.H265.AAC-OurTV.mp4?sign=ffKvJyXV76KZ0BuNF2NqHO7KK5RYZeKf4fKVZQmlMRo=:0" />
-</video>
+npm安裝
+此方法只支持 Hexo 5.0.0 以上版本
+通過 npm 安裝並不會在 themes 裏生成主題文件夾，而是在 node_modules 裏生成
+
+在你的 Hexo 根目錄裏
+npm install hexo-theme-butterfly
+
+升級方法：在 Hexo 根目錄下，運行 npm update hexo-theme-butterfly
+
+应用主题
+修改 Hexo 根目錄下的 _config.yml，把主題改為 butterfly
+
+theme: butterfly
+安装插件
+如果你沒有 pug 以及 stylus 的渲染器，請下載安裝：
+npm install hexo-renderer-pug hexo-renderer-stylus --save
